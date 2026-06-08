@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="id" class="h-full">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Muhamad Abdul Kadir - Football Portfolio</title>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
+  <script src="/_sdk/element_sdk.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&amp;family=Source+Sans+3:wght@300;400;600&amp;display=swap" rel="stylesheet">
+  <style>
+    html, body { height: 100%; margin: 0; }
+    .font-heading { font-family: 'Oswald', sans-serif; }
+    .font-body { font-family: 'Source Sans 3', sans-serif; }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-fade-up { animation: fadeUp 0.8s ease forwards; }
+    .delay-1 { animation-delay: 0.2s; opacity: 0; }
+    .delay-2 { animation-delay: 0.4s; opacity: 0; }
+    .delay-3 { animation-delay: 0.6s; opacity: 0; }
+    .delay-4 { animation-delay: 0.8s; opacity: 0; }
+    .stat-card:hover { transform: translateY(-6px); }
+    .stat-card { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+  </style>
+  <style>body { box-sizing: border-box; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+ <script src="/_sdk/telemetry_sdk.js"></script></head>
+ <body class="h-full overflow-auto">
+  <div id="app" class="w-full min-h-full bg-[#0a0f1a]"><!-- Hero Section -->
+   <header class="relative w-full overflow-hidden" style="background: linear-gradient(135deg, #0a0f1a 0%, #1a2740 50%, #0d3b2e 100%);">
+    <div class="absolute inset-0 opacity-10">
+     <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"><pattern id="grid" width="60" height="60" patternunits="userSpaceOnUse">
+       <path d="M 60 0 L 0 0 0 60" fill="none" stroke="#22d3a0" stroke-width="0.5" />
+      </pattern> <rect width="100%" height="100%" fill="url(#grid)" />
+     </svg>
+    </div>
+    <div class="relative max-w-5xl mx-auto px-6 py-20 md:py-32 text-center">
+     <div class="animate-fade-up">
+      <div class="inline-flex items-center gap-2 bg-[#22d3a0]/10 border border-[#22d3a0]/30 rounded-full px-4 py-2 mb-6"><span class="w-2 h-2 bg-[#22d3a0] rounded-full animate-pulse"></span> <span class="font-body text-[#22d3a0] text-sm tracking-wide" id="position-badge">PESEPAK BOLA PROFESIONAL</span>
+      </div>
+     </div>
+     <h1 id="player-name" class="animate-fade-up delay-1 font-heading text-5xl md:text-7xl font-bold text-white tracking-tight leading-tight">MUHAMAD ABDUL KADIR</h1>
+     <p id="bio-text" class="animate-fade-up delay-2 font-body text-lg md:text-xl text-gray-300 mt-6 max-w-2xl mx-auto leading-relaxed">Pemain berdedikasi tinggi dengan semangat juang di lapangan. Selalu berusaha memberikan yang terbaik untuk tim dan mencapai prestasi tertinggi.</p><!-- Player Silhouette -->
+     <div class="animate-fade-up delay-3 mt-12 flex justify-center">
+      <svg width="180" height="220" viewbox="0 0 180 220" fill="none" xmlns="http://www.w3.org/2000/svg" class="opacity-80"><circle cx="90" cy="40" r="28" fill="#22d3a0" opacity="0.3" /> <circle cx="90" cy="40" r="22" fill="#22d3a0" opacity="0.5" /> <path d="M70 70 C60 90 55 120 60 150 L65 200 L75 200 L80 155 L90 130 L100 155 L105 200 L115 200 L120 150 C125 120 120 90 110 70 Z" fill="#22d3a0" opacity="0.4" /> <ellipse cx="60" cy="100" rx="15" ry="8" fill="#22d3a0" opacity="0.3" transform="rotate(-30 60 100)" /> <ellipse cx="120" cy="100" rx="15" ry="8" fill="#22d3a0" opacity="0.3" transform="rotate(30 120 100)" /> <circle cx="135" cy="195" r="14" stroke="#22d3a0" stroke-width="2" fill="none" opacity="0.6" /> <path d="M128 195 L142 195 M135 188 L135 202 M130 190 L140 200 M140 190 L130 200" stroke="#22d3a0" stroke-width="1" opacity="0.4" />
+      </svg>
+     </div>
+    </div>
+   </header><!-- Stats Section -->
+   <section class="w-full px-6 py-16 md:py-24">
+    <div class="max-w-5xl mx-auto">
+     <h2 class="animate-fade-up font-heading text-3xl md:text-4xl font-bold text-white text-center mb-4">STATISTIK KARIR</h2>
+     <div class="w-16 h-1 bg-[#22d3a0] mx-auto mb-12 rounded-full"></div>
+     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="stat-card bg-[#131b2e] border border-[#1e2d4a] rounded-2xl p-8 text-center">
+       <div class="w-14 h-14 bg-[#22d3a0]/10 rounded-xl flex items-center justify-center mx-auto mb-4"><i data-lucide="target" class="text-[#22d3a0]" style="width:28px;height:28px;"></i>
+       </div>
+       <p id="stat-goals" class="font-heading text-4xl font-bold text-white">123</p>
+       <p class="font-body text-gray-400 mt-2">Goals</p>
+      </div>
+      <div class="stat-card bg-[#131b2e] border border-[#1e2d4a] rounded-2xl p-8 text-center">
+       <div class="w-14 h-14 bg-[#22d3a0]/10 rounded-xl flex items-center justify-center mx-auto mb-4"><i data-lucide="users" class="text-[#22d3a0]" style="width:28px;height:28px;"></i>
+       </div>
+       <p id="stat-assists" class="font-heading text-4xl font-bold text-white">95</p>
+       <p class="font-body text-gray-400 mt-2">Assists</p>
+      </div>
+      <div class="stat-card bg-[#131b2e] border border-[#1e2d4a] rounded-2xl p-8 text-center">
+       <div class="w-14 h-14 bg-[#22d3a0]/10 rounded-xl flex items-center justify-center mx-auto mb-4"><i data-lucide="calendar" class="text-[#22d3a0]" style="width:28px;height:28px;"></i>
+       </div>
+       <p id="stat-matches" class="font-heading text-4xl font-bold text-white">130</p>
+       <p class="font-body text-gray-400 mt-2">Matches</p>
+      </div>
+     </div>
+    </div>
+   </section><!-- Skills Section -->
+   <section class="w-full px-6 py-16 bg-[#0d1220]">
+    <div class="max-w-5xl mx-auto">
+     <h2 class="font-heading text-3xl md:text-4xl font-bold text-white text-center mb-4">KEAHLIAN</h2>
+     <div class="w-16 h-1 bg-[#22d3a0] mx-auto mb-12 rounded-full"></div>
+     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="space-y-5">
+       <div>
+        <div class="flex justify-between font-body text-sm text-gray-300 mb-2">
+         <span>Kecepatan</span><span>95%</span>
+        </div>
+        <div class="h-2 bg-[#1e2d4a] rounded-full overflow-hidden">
+         <div class="h-full bg-gradient-to-r from-[#22d3a0] to-[#0fa882] rounded-full" style="width:92%"></div>
+        </div>
+       </div>
+       <div>
+        <div class="flex justify-between font-body text-sm text-gray-300 mb-2">
+         <span>Dribbling</span><span>92%</span>
+        </div>
+        <div class="h-2 bg-[#1e2d4a] rounded-full overflow-hidden">
+         <div class="h-full bg-gradient-to-r from-[#22d3a0] to-[#0fa882] rounded-full" style="width:88%"></div>
+        </div>
+       </div>
+       <div>
+        <div class="flex justify-between font-body text-sm text-gray-300 mb-2">
+         <span>Shooting</span><span>99%</span>
+        </div>
+        <div class="h-2 bg-[#1e2d4a] rounded-full overflow-hidden">
+         <div class="h-full bg-gradient-to-r from-[#22d3a0] to-[#0fa882] rounded-full" style="width:85%"></div>
+        </div>
+       </div>
+      </div>
+      <div class="space-y-5">
+       <div>
+        <div class="flex justify-between font-body text-sm text-gray-300 mb-2">
+         <span>Passing</span><span>92%</span>
+        </div>
+        <div class="h-2 bg-[#1e2d4a] rounded-full overflow-hidden">
+         <div class="h-full bg-gradient-to-r from-[#22d3a0] to-[#0fa882] rounded-full" style="width:90%"></div>
+        </div>
+       </div>
+       <div>
+        <div class="flex justify-between font-body text-sm text-gray-300 mb-2">
+         <span>Stamina</span><span>98%</span>
+        </div>
+        <div class="h-2 bg-[#1e2d4a] rounded-full overflow-hidden">
+         <div class="h-full bg-gradient-to-r from-[#22d3a0] to-[#0fa882] rounded-full" style="width:94%"></div>
+        </div>
+       </div>
+       <div>
+        <div class="flex justify-between font-body text-sm text-gray-300 mb-2">
+         <span>Teamwork</span><span>96%</span>
+        </div>
+        <div class="h-2 bg-[#1e2d4a] rounded-full overflow-hidden">
+         <div class="h-full bg-gradient-to-r from-[#22d3a0] to-[#0fa882] rounded-full" style="width:96%"></div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- Contact Section -->
+   <section class="w-full px-6 py-16">
+    <div class="max-w-5xl mx-auto text-center">
+     <h2 class="font-heading text-3xl md:text-4xl font-bold text-white mb-4">HUBUNGI SAYA</h2>
+     <div class="w-16 h-1 bg-[#22d3a0] mx-auto mb-8 rounded-full"></div>
+     <p class="font-body text-gray-400 mb-8">Tertarik untuk bekerja sama? Hubungi saya melalui media sosial.</p>
+     <div class="flex justify-center gap-4"><button class="w-12 h-12 bg-[#131b2e] border border-[#1e2d4a] rounded-xl flex items-center justify-center text-[#22d3a0] hover:bg-[#22d3a0]/10 transition-colors"> <i data-lucide="instagram" style="width:20px;height:20px;"></i> </button> <button class="w-12 h-12 bg-[#131b2e] border border-[#1e2d4a] rounded-xl flex items-center justify-center text-[#22d3a0] hover:bg-[#22d3a0]/10 transition-colors"> <i data-lucide="twitter" style="width:20px;height:20px;"></i> </button> <button class="w-12 h-12 bg-[#131b2e] border border-[#1e2d4a] rounded-xl flex items-center justify-center text-[#22d3a0] hover:bg-[#22d3a0]/10 transition-colors"> <i data-lucide="mail" style="width:20px;height:20px;"></i> </button>
+     </div>
+    </div>
+   </section><!-- Footer -->
+   <footer class="w-full px-6 py-8 border-t border-[#1e2d4a]">
+    <p class="font-body text-center text-gray-500 text-sm">© 2024 Muhamad Abdul Kadir. All rights reserved.</p>
+   </footer>
+  </div>
+  <script>
+    lucide.createIcons();
+
+    const defaultConfig = {
+      player_name: "MUHAMAD ABDUL KADIR",
+      position: "PESEPAK BOLA PROFESIONAL",
+      bio: "Pemain berdedikasi tinggi dengan semangat juang di lapangan. Selalu berusaha memberikan yang terbaik untuk tim dan mencapai prestasi tertinggi.",
+      goals: "87",
+      assists: "45",
+      matches: "156",
+      background_color: "#0a0f1a",
+      surface_color: "#131b2e",
+      text_color: "#ffffff",
+      accent_color: "#22d3a0",
+      secondary_action_color: "#1e2d4a",
+      font_family: "Oswald",
+      font_size: 16
+    };
+
+    async function onConfigChange(config) {
+      const c = { ...defaultConfig, ...config };
+      document.getElementById('player-name').textContent = c.player_name;
+      document.getElementById('position-badge').textContent = c.position;
+      document.getElementById('bio-text').textContent = c.bio;
+      document.getElementById('stat-goals').textContent = c.goals;
+      document.getElementById('stat-assists').textContent = c.assists;
+      document.getElementById('stat-matches').textContent = c.matches;
+
+      // Colors
+      const app = document.getElementById('app');
+      app.style.backgroundColor = c.background_color;
+
+      document.querySelectorAll('.stat-card').forEach(el => {
+        el.style.backgroundColor = c.surface_color;
+        el.style.borderColor = c.secondary_action_color;
+      });
+
+      document.querySelectorAll('h1, h2, .stat-card p:first-of-type').forEach(el => {
+        if (el.classList.contains('font-heading')) el.style.color = c.text_color;
+      });
+      document.getElementById('player-name').style.color = c.text_color;
+
+      // Font
+      const fontStack = `${c.font_family}, sans-serif`;
+      document.querySelectorAll('.font-heading').forEach(el => el.style.fontFamily = fontStack);
+
+      // Font size
+      const base = c.font_size;
+      document.getElementById('player-name').style.fontSize = `${base * 3.5}px`;
+      document.getElementById('bio-text').style.fontSize = `${base * 1.15}px`;
+    }
+
+    function mapToCapabilities(config) {
+      const c = { ...defaultConfig, ...config };
+      return {
+        recolorables: [
+          { get: () => c.background_color, set: (v) => { c.background_color = v; window.elementSdk.setConfig({ background_color: v }); }},
+          { get: () => c.surface_color, set: (v) => { c.surface_color = v; window.elementSdk.setConfig({ surface_color: v }); }},
+          { get: () => c.text_color, set: (v) => { c.text_color = v; window.elementSdk.setConfig({ text_color: v }); }},
+          { get: () => c.accent_color, set: (v) => { c.accent_color = v; window.elementSdk.setConfig({ accent_color: v }); }},
+          { get: () => c.secondary_action_color, set: (v) => { c.secondary_action_color = v; window.elementSdk.setConfig({ secondary_action_color: v }); }}
+        ],
+        borderables: [],
+        fontEditable: { get: () => c.font_family, set: (v) => { c.font_family = v; window.elementSdk.setConfig({ font_family: v }); }},
+        fontSizeable: { get: () => c.font_size, set: (v) => { c.font_size = v; window.elementSdk.setConfig({ font_size: v }); }}
+      };
+    }
+
+    function mapToEditPanelValues(config) {
+      const c = { ...defaultConfig, ...config };
+      return new Map([
+        ["player_name", c.player_name],
+        ["position", c.position],
+        ["bio", c.bio],
+        ["goals", c.goals],
+        ["assists", c.assists],
+        ["matches", c.matches]
+      ]);
+    }
+
+    window.elementSdk.init({ defaultConfig, onConfigChange, mapToCapabilities, mapToEditPanelValues });
+  </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a0857f710d0240a9',t:'MTc4MDg5NjU1NQ=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
