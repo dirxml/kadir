@@ -1,234 +1,166 @@
 <!doctype html>
 <html lang="id" class="h-full">
- <head>
+ <head><script src="/_sdk/telemetry_sdk.js"></script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Muhamad Abdul Kadir - Football Portfolio</title>
+  <title>Muhamad Abdul Kadir — Designer</title>
   <script src="https://cdn.tailwindcss.com/3.4.17"></script>
   <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
   <script src="/_sdk/element_sdk.js"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&amp;family=Source+Sans+3:wght@300;400;600&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700&amp;family=DM+Serif+Display&amp;display=swap" rel="stylesheet">
   <style>
     html, body { height: 100%; margin: 0; }
-    .font-heading { font-family: 'Oswald', sans-serif; }
-    .font-body { font-family: 'Source Sans 3', sans-serif; }
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(30px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    .animate-fade-up { animation: fadeUp 0.8s ease forwards; }
-    .delay-1 { animation-delay: 0.2s; opacity: 0; }
-    .delay-2 { animation-delay: 0.4s; opacity: 0; }
-    .delay-3 { animation-delay: 0.6s; opacity: 0; }
-    .delay-4 { animation-delay: 0.8s; opacity: 0; }
-    .stat-card:hover { transform: translateY(-6px); }
-    .stat-card { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+    .font-sora { font-family: 'Sora', sans-serif; }
+    .font-display { font-family: 'DM Serif Display', serif; }
+    .card-hover { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+    .card-hover:hover { transform: translateY(-6px); box-shadow: 0 20px 40px rgba(0,0,0,0.15); }
+    .fade-in { animation: fadeIn 0.8s ease forwards; opacity: 0; }
+    .fade-in-1 { animation-delay: 0.1s; }
+    .fade-in-2 { animation-delay: 0.3s; }
+    .fade-in-3 { animation-delay: 0.5s; }
+    .fade-in-4 { animation-delay: 0.7s; }
+    @keyframes fadeIn { to { opacity: 1; transform: translateY(0); } from { opacity: 0; transform: translateY(20px); } }
+    .grain { background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E"); }
   </style>
   <style>body { box-sizing: border-box; }</style>
   <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
- <script src="/_sdk/telemetry_sdk.js"></script></head>
- <body class="h-full overflow-auto">
-  <div id="app" class="w-full min-h-full bg-[#0a0f1a]"><!-- Hero Section -->
-   <header class="relative w-full overflow-hidden" style="background: linear-gradient(135deg, #0a0f1a 0%, #1a2740 50%, #0d3b2e 100%);">
-    <div class="absolute inset-0 opacity-10">
-     <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"><pattern id="grid" width="60" height="60" patternunits="userSpaceOnUse">
-       <path d="M 60 0 L 0 0 0 60" fill="none" stroke="#22d3a0" stroke-width="0.5" />
-      </pattern> <rect width="100%" height="100%" fill="url(#grid)" />
-     </svg>
+ </head>
+ <body class="h-full font-sora">
+  <div id="app" class="h-full w-full overflow-auto grain" style="background-color: #0f0f0f;">
+   <!-- Nav -->
+   <nav class="fixed top-0 left-0 right-0 z-50 px-6 py-5 flex justify-between items-center" style="background: rgba(15,15,15,0.85); backdrop-filter: blur(10px);">
+    <span class="font-display text-xl" style="color: #f4f0eb;">MAK</span>
+    <div class="flex gap-6 text-sm" style="color: #a89f95;">
+     <a href="#work" class="hover:text-white transition">Karya</a> <a href="#about" class="hover:text-white transition">Tentang</a> <a href="#contact" class="hover:text-white transition">Kontak</a>
     </div>
-    <div class="relative max-w-5xl mx-auto px-6 py-20 md:py-32 text-center">
-     <div class="animate-fade-up">
-      <div class="inline-flex items-center gap-2 bg-[#22d3a0]/10 border border-[#22d3a0]/30 rounded-full px-4 py-2 mb-6"><span class="w-2 h-2 bg-[#22d3a0] rounded-full animate-pulse"></span> <span class="font-body text-[#22d3a0] text-sm tracking-wide" id="position-badge">PESEPAK BOLA PROFESIONAL</span>
-      </div>
-     </div>
-     <h1 id="player-name" class="animate-fade-up delay-1 font-heading text-5xl md:text-7xl font-bold text-white tracking-tight leading-tight">MUHAMAD ABDUL KADIR</h1>
-     <p id="bio-text" class="animate-fade-up delay-2 font-body text-lg md:text-xl text-gray-300 mt-6 max-w-2xl mx-auto leading-relaxed">Pemain berdedikasi tinggi dengan semangat juang di lapangan. Selalu berusaha memberikan yang terbaik untuk tim dan mencapai prestasi tertinggi.</p><!-- Player Silhouette -->
-     <div class="animate-fade-up delay-3 mt-12 flex justify-center">
-      <svg width="180" height="220" viewbox="0 0 180 220" fill="none" xmlns="http://www.w3.org/2000/svg" class="opacity-80"><circle cx="90" cy="40" r="28" fill="#22d3a0" opacity="0.3" /> <circle cx="90" cy="40" r="22" fill="#22d3a0" opacity="0.5" /> <path d="M70 70 C60 90 55 120 60 150 L65 200 L75 200 L80 155 L90 130 L100 155 L105 200 L115 200 L120 150 C125 120 120 90 110 70 Z" fill="#22d3a0" opacity="0.4" /> <ellipse cx="60" cy="100" rx="15" ry="8" fill="#22d3a0" opacity="0.3" transform="rotate(-30 60 100)" /> <ellipse cx="120" cy="100" rx="15" ry="8" fill="#22d3a0" opacity="0.3" transform="rotate(30 120 100)" /> <circle cx="135" cy="195" r="14" stroke="#22d3a0" stroke-width="2" fill="none" opacity="0.6" /> <path d="M128 195 L142 195 M135 188 L135 202 M130 190 L140 200 M140 190 L130 200" stroke="#22d3a0" stroke-width="1" opacity="0.4" />
-      </svg>
-     </div>
-    </div>
-   </header><!-- Stats Section -->
-   <section class="w-full px-6 py-16 md:py-24">
-    <div class="max-w-5xl mx-auto">
-     <h2 class="animate-fade-up font-heading text-3xl md:text-4xl font-bold text-white text-center mb-4">STATISTIK KARIR</h2>
-     <div class="w-16 h-1 bg-[#22d3a0] mx-auto mb-12 rounded-full"></div>
-     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-      <div class="stat-card bg-[#131b2e] border border-[#1e2d4a] rounded-2xl p-8 text-center">
-       <div class="w-14 h-14 bg-[#22d3a0]/10 rounded-xl flex items-center justify-center mx-auto mb-4"><i data-lucide="target" class="text-[#22d3a0]" style="width:28px;height:28px;"></i>
+   </nav><!-- Hero -->
+   <section class="flex flex-col justify-center items-center text-center px-6 pt-40 pb-24"><!-- Profile Frame -->
+    <div class="mb-8 fade-in fade-in-1">
+     <div class="relative inline-block"><!-- Outer gold frame -->
+      <div class="absolute inset-0 rounded-full" style="background: linear-gradient(135deg, #d4a55a 0%, #8b6914 100%); padding: 4px;"><!-- Middle frame -->
+       <div class="absolute inset-1 rounded-full" style="background-color: #0f0f0f;">
        </div>
-       <p id="stat-goals" class="font-heading text-4xl font-bold text-white">123</p>
-       <p class="font-body text-gray-400 mt-2">Goals</p>
-      </div>
-      <div class="stat-card bg-[#131b2e] border border-[#1e2d4a] rounded-2xl p-8 text-center">
-       <div class="w-14 h-14 bg-[#22d3a0]/10 rounded-xl flex items-center justify-center mx-auto mb-4"><i data-lucide="users" class="text-[#22d3a0]" style="width:28px;height:28px;"></i>
-       </div>
-       <p id="stat-assists" class="font-heading text-4xl font-bold text-white">95</p>
-       <p class="font-body text-gray-400 mt-2">Assists</p>
-      </div>
-      <div class="stat-card bg-[#131b2e] border border-[#1e2d4a] rounded-2xl p-8 text-center">
-       <div class="w-14 h-14 bg-[#22d3a0]/10 rounded-xl flex items-center justify-center mx-auto mb-4"><i data-lucide="calendar" class="text-[#22d3a0]" style="width:28px;height:28px;"></i>
-       </div>
-       <p id="stat-matches" class="font-heading text-4xl font-bold text-white">130</p>
-       <p class="font-body text-gray-400 mt-2">Matches</p>
-      </div>
-     </div>
-    </div>
-   </section><!-- Skills Section -->
-   <section class="w-full px-6 py-16 bg-[#0d1220]">
-    <div class="max-w-5xl mx-auto">
-     <h2 class="font-heading text-3xl md:text-4xl font-bold text-white text-center mb-4">KEAHLIAN</h2>
-     <div class="w-16 h-1 bg-[#22d3a0] mx-auto mb-12 rounded-full"></div>
-     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-      <div class="space-y-5">
-       <div>
-        <div class="flex justify-between font-body text-sm text-gray-300 mb-2">
-         <span>Kecepatan</span><span>95%</span>
-        </div>
-        <div class="h-2 bg-[#1e2d4a] rounded-full overflow-hidden">
-         <div class="h-full bg-gradient-to-r from-[#22d3a0] to-[#0fa882] rounded-full" style="width:92%"></div>
-        </div>
-       </div>
-       <div>
-        <div class="flex justify-between font-body text-sm text-gray-300 mb-2">
-         <span>Dribbling</span><span>92%</span>
-        </div>
-        <div class="h-2 bg-[#1e2d4a] rounded-full overflow-hidden">
-         <div class="h-full bg-gradient-to-r from-[#22d3a0] to-[#0fa882] rounded-full" style="width:88%"></div>
-        </div>
-       </div>
-       <div>
-        <div class="flex justify-between font-body text-sm text-gray-300 mb-2">
-         <span>Shooting</span><span>99%</span>
-        </div>
-        <div class="h-2 bg-[#1e2d4a] rounded-full overflow-hidden">
-         <div class="h-full bg-gradient-to-r from-[#22d3a0] to-[#0fa882] rounded-full" style="width:85%"></div>
-        </div>
-       </div>
-      </div>
-      <div class="space-y-5">
-       <div>
-        <div class="flex justify-between font-body text-sm text-gray-300 mb-2">
-         <span>Passing</span><span>92%</span>
-        </div>
-        <div class="h-2 bg-[#1e2d4a] rounded-full overflow-hidden">
-         <div class="h-full bg-gradient-to-r from-[#22d3a0] to-[#0fa882] rounded-full" style="width:90%"></div>
-        </div>
-       </div>
-       <div>
-        <div class="flex justify-between font-body text-sm text-gray-300 mb-2">
-         <span>Stamina</span><span>98%</span>
-        </div>
-        <div class="h-2 bg-[#1e2d4a] rounded-full overflow-hidden">
-         <div class="h-full bg-gradient-to-r from-[#22d3a0] to-[#0fa882] rounded-full" style="width:94%"></div>
-        </div>
-       </div>
-       <div>
-        <div class="flex justify-between font-body text-sm text-gray-300 mb-2">
-         <span>Teamwork</span><span>96%</span>
-        </div>
-        <div class="h-2 bg-[#1e2d4a] rounded-full overflow-hidden">
-         <div class="h-full bg-gradient-to-r from-[#22d3a0] to-[#0fa882] rounded-full" style="width:96%"></div>
-        </div>
+      </div><!-- Profile circle -->
+      <div class="relative w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden border-4" style="border-color: #d4a55a; background: linear-gradient(135deg, #d4a55a 0%, #8b6914 100%);">
+       <div class="w-full h-full flex items-center justify-center text-6xl md:text-7xl" style="background: linear-gradient(135deg, #d4a55a 0%, #8b6914 100%); color: #0f0f0f;"><i data-lucide="user" style="width: 80px; height: 80px;"></i>
+         <img src="ding.jpg" alt="profil" >
        </div>
       </div>
      </div>
     </div>
-   </section><!-- Contact Section -->
-   <section class="w-full px-6 py-16">
-    <div class="max-w-5xl mx-auto text-center">
-     <h2 class="font-heading text-3xl md:text-4xl font-bold text-white mb-4">HUBUNGI SAYA</h2>
-     <div class="w-16 h-1 bg-[#22d3a0] mx-auto mb-8 rounded-full"></div>
-     <p class="font-body text-gray-400 mb-8">Tertarik untuk bekerja sama? Hubungi saya melalui media sosial.</p>
-     <div class="flex justify-center gap-4"><button class="w-12 h-12 bg-[#131b2e] border border-[#1e2d4a] rounded-xl flex items-center justify-center text-[#22d3a0] hover:bg-[#22d3a0]/10 transition-colors"> <i data-lucide="instagram" style="width:20px;height:20px;"></i> </button> <button class="w-12 h-12 bg-[#131b2e] border border-[#1e2d4a] rounded-xl flex items-center justify-center text-[#22d3a0] hover:bg-[#22d3a0]/10 transition-colors"> <i data-lucide="twitter" style="width:20px;height:20px;"></i> </button> <button class="w-12 h-12 bg-[#131b2e] border border-[#1e2d4a] rounded-xl flex items-center justify-center text-[#22d3a0] hover:bg-[#22d3a0]/10 transition-colors"> <i data-lucide="mail" style="width:20px;height:20px;"></i> </button>
+    <p class="text-sm tracking-widest uppercase mb-4 fade-in fade-in-1" style="color: #d4a55a;">Designer &amp; Creative Thinker</p>
+    <h1 id="hero-title" class="font-display text-5xl md:text-7xl lg:text-8xl leading-tight fade-in fade-in-2" style="color: #f4f0eb;">Muhamad Abdul Kadir</h1>
+    <p id="hero-subtitle" class="mt-6 text-lg max-w-xl fade-in fade-in-3" style="color: #a89f95;">Mengubah ide menjadi pengalaman visual yang bermakna dan berkesan.</p><a href="#work" class="mt-10 inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold transition card-hover fade-in fade-in-4" style="background-color: #d4a55a; color: #0f0f0f;"> Lihat Karya <i data-lucide="arrow-down" style="width:16px;height:16px;"></i> </a>
+   </section><!-- Work -->
+   <section id="work" class="px-6 md:px-16 py-20">
+    <h2 class="font-display text-3xl md:text-4xl mb-12" style="color: #f4f0eb;">Karya Pilihan</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+     <div class="rounded-2xl overflow-hidden card-hover" style="background-color: #1a1a1a;">
+      <div class="h-48 flex items-center justify-center" style="background: linear-gradient(135deg, #d4a55a 0%, #8b6914 100%);">
+       <i data-lucide="palette" style="width:48px;height:48px;color:#0f0f0f;"></i>
+      </div>
+      <div class="p-5">
+       <h3 class="font-semibold text-lg" style="color: #f4f0eb;">Brand Identity</h3>
+       <p class="text-sm mt-1" style="color: #a89f95;">Identitas visual untuk startup teknologi</p>
+      </div>
      </div>
+     <div class="rounded-2xl overflow-hidden card-hover" style="background-color: #1a1a1a;">
+      <div class="h-48 flex items-center justify-center" style="background: linear-gradient(135deg, #5a8fd4 0%, #1e3a5f 100%);">
+       <i data-lucide="layout" style="width:48px;height:48px;color:#0f0f0f;"></i>
+      </div>
+      <div class="p-5">
+       <h3 class="font-semibold text-lg" style="color: #f4f0eb;">UI/UX Design</h3>
+       <p class="text-sm mt-1" style="color: #a89f95;">Aplikasi mobile e-commerce</p>
+      </div>
+     </div>
+     <div class="rounded-2xl overflow-hidden card-hover" style="background-color: #1a1a1a;">
+      <div class="h-48 flex items-center justify-center" style="background: linear-gradient(135deg, #a55ad4 0%, #4a1a6b 100%);">
+       <i data-lucide="pen-tool" style="width:48px;height:48px;color:#0f0f0f;"></i>
+      </div>
+      <div class="p-5">
+       <h3 class="font-semibold text-lg" style="color: #f4f0eb;">Illustration</h3>
+       <p class="text-sm mt-1" style="color: #a89f95;">Seri ilustrasi editorial</p>
+      </div>
+     </div>
+    </div>
+   </section><!-- About -->
+   <section id="about" class="px-6 md:px-16 py-20">
+    <div class="max-w-3xl">
+     <h2 class="font-display text-3xl md:text-4xl mb-6" style="color: #f4f0eb;">Tentang Saya</h2>
+     <p id="about-text" class="text-lg leading-relaxed" style="color: #a89f95;">Saya adalah seorang designer dengan passion dalam menciptakan desain yang tidak hanya indah secara visual, tetapi juga fungsional dan berdampak. Berpengalaman dalam branding, UI/UX, dan ilustrasi digital.</p>
+     <div class="flex flex-wrap gap-3 mt-8">
+      <span class="px-4 py-2 rounded-full text-sm" style="background-color: #1a1a1a; color: #d4a55a;">Figma</span> <span class="px-4 py-2 rounded-full text-sm" style="background-color: #1a1a1a; color: #d4a55a;">Adobe Illustrator</span> <span class="px-4 py-2 rounded-full text-sm" style="background-color: #1a1a1a; color: #d4a55a;">Photoshop</span> <span class="px-4 py-2 rounded-full text-sm" style="background-color: #1a1a1a; color: #d4a55a;">After Effects</span> <span class="px-4 py-2 rounded-full text-sm" style="background-color: #1a1a1a; color: #d4a55a;">Canva</span>
+     </div>
+    </div>
+   </section><!-- Contact -->
+   <section id="contact" class="px-6 md:px-16 py-20">
+    <h2 class="font-display text-3xl md:text-4xl mb-6" style="color: #f4f0eb;">Mari Berkolaborasi</h2>
+    <p class="text-lg mb-8" style="color: #a89f95;">Punya proyek menarik? Hubungi saya.</p>
+    <div class="flex flex-wrap gap-4">
+     <a href="mailto:hello@abdulkadir.design" class="inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold transition card-hover" style="background-color: #d4a55a; color: #0f0f0f;"> <i data-lucide="mail" style="width:16px;height:16px;"></i> Email </a> <a href="#" class="inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold border transition card-hover" style="border-color: #333; color: #f4f0eb;"> <i data-lucide="instagram" style="width:16px;height:16px;"></i> Instagram </a> <a href="#" class="inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold border transition card-hover" style="border-color: #333; color: #f4f0eb;"> <i data-lucide="linkedin" style="width:16px;height:16px;"></i> LinkedIn </a>
     </div>
    </section><!-- Footer -->
-   <footer class="w-full px-6 py-8 border-t border-[#1e2d4a]">
-    <p class="font-body text-center text-gray-500 text-sm">© 2024 Muhamad Abdul Kadir. All rights reserved.</p>
+   <footer class="px-6 md:px-16 py-8 text-center text-sm" style="color: #555;">
+    © 2024 Muhamad Abdul Kadir. All rights reserved.
    </footer>
   </div>
   <script>
     lucide.createIcons();
 
     const defaultConfig = {
-      player_name: "MUHAMAD ABDUL KADIR",
-      position: "PESEPAK BOLA PROFESIONAL",
-      bio: "Pemain berdedikasi tinggi dengan semangat juang di lapangan. Selalu berusaha memberikan yang terbaik untuk tim dan mencapai prestasi tertinggi.",
-      goals: "87",
-      assists: "45",
-      matches: "156",
-      background_color: "#0a0f1a",
-      surface_color: "#131b2e",
-      text_color: "#ffffff",
-      accent_color: "#22d3a0",
-      secondary_action_color: "#1e2d4a",
-      font_family: "Oswald",
+      hero_title: 'Muhamad Abdul Kadir',
+      hero_subtitle: 'Designer & Creative Thinker',
+      about_text: 'Saya adalah seorang designer dengan passion dalam menciptakan desain yang tidak hanya indah secara visual, tetapi juga fungsional dan berdampak. Berpengalaman dalam branding, UI/UX, dan ilustrasi digital.',
+      background_color: '#0f0f0f',
+      surface_color: '#1a1a1a',
+      text_color: '#f4f0eb',
+      accent_color: '#d4a55a',
+      muted_color: '#a89f95',
+      font_family: 'Sora',
       font_size: 16
     };
 
-    async function onConfigChange(config) {
+    function applyConfig(config) {
       const c = { ...defaultConfig, ...config };
-      document.getElementById('player-name').textContent = c.player_name;
-      document.getElementById('position-badge').textContent = c.position;
-      document.getElementById('bio-text').textContent = c.bio;
-      document.getElementById('stat-goals').textContent = c.goals;
-      document.getElementById('stat-assists').textContent = c.assists;
-      document.getElementById('stat-matches').textContent = c.matches;
+      document.getElementById('hero-title').textContent = c.hero_title;
+      document.querySelector('#hero-subtitle') && (document.getElementById('hero-subtitle').textContent = c.hero_subtitle);
+      document.getElementById('about-text').textContent = c.about_text;
 
-      // Colors
       const app = document.getElementById('app');
       app.style.backgroundColor = c.background_color;
 
-      document.querySelectorAll('.stat-card').forEach(el => {
-        el.style.backgroundColor = c.surface_color;
-        el.style.borderColor = c.secondary_action_color;
-      });
+      document.querySelectorAll('[style*="color: #f4f0eb"], [style*="color:#f4f0eb"]').forEach(el => el.style.color = c.text_color);
+      document.querySelectorAll('[style*="color: #a89f95"], [style*="color:#a89f95"]').forEach(el => el.style.color = c.muted_color);
 
-      document.querySelectorAll('h1, h2, .stat-card p:first-of-type').forEach(el => {
-        if (el.classList.contains('font-heading')) el.style.color = c.text_color;
-      });
-      document.getElementById('player-name').style.color = c.text_color;
-
-      // Font
-      const fontStack = `${c.font_family}, sans-serif`;
-      document.querySelectorAll('.font-heading').forEach(el => el.style.fontFamily = fontStack);
-
-      // Font size
-      const base = c.font_size;
-      document.getElementById('player-name').style.fontSize = `${base * 3.5}px`;
-      document.getElementById('bio-text').style.fontSize = `${base * 1.15}px`;
+      const font = c.font_family + ', sans-serif';
+      document.body.style.fontFamily = font;
+      const baseSize = c.font_size;
+      document.getElementById('hero-title').style.fontSize = '';
+      document.getElementById('about-text').style.fontSize = baseSize + 'px';
     }
 
-    function mapToCapabilities(config) {
-      const c = { ...defaultConfig, ...config };
-      return {
+    window.elementSdk.init({
+      defaultConfig,
+      onConfigChange: async (config) => { applyConfig(config); },
+      mapToCapabilities: (config) => ({
         recolorables: [
-          { get: () => c.background_color, set: (v) => { c.background_color = v; window.elementSdk.setConfig({ background_color: v }); }},
-          { get: () => c.surface_color, set: (v) => { c.surface_color = v; window.elementSdk.setConfig({ surface_color: v }); }},
-          { get: () => c.text_color, set: (v) => { c.text_color = v; window.elementSdk.setConfig({ text_color: v }); }},
-          { get: () => c.accent_color, set: (v) => { c.accent_color = v; window.elementSdk.setConfig({ accent_color: v }); }},
-          { get: () => c.secondary_action_color, set: (v) => { c.secondary_action_color = v; window.elementSdk.setConfig({ secondary_action_color: v }); }}
+          { get: () => config.background_color || defaultConfig.background_color, set: (v) => { config.background_color = v; window.elementSdk.setConfig({ background_color: v }); } },
+          { get: () => config.surface_color || defaultConfig.surface_color, set: (v) => { config.surface_color = v; window.elementSdk.setConfig({ surface_color: v }); } },
+          { get: () => config.text_color || defaultConfig.text_color, set: (v) => { config.text_color = v; window.elementSdk.setConfig({ text_color: v }); } },
+          { get: () => config.accent_color || defaultConfig.accent_color, set: (v) => { config.accent_color = v; window.elementSdk.setConfig({ accent_color: v }); } },
+          { get: () => config.muted_color || defaultConfig.muted_color, set: (v) => { config.muted_color = v; window.elementSdk.setConfig({ muted_color: v }); } }
         ],
         borderables: [],
-        fontEditable: { get: () => c.font_family, set: (v) => { c.font_family = v; window.elementSdk.setConfig({ font_family: v }); }},
-        fontSizeable: { get: () => c.font_size, set: (v) => { c.font_size = v; window.elementSdk.setConfig({ font_size: v }); }}
-      };
-    }
-
-    function mapToEditPanelValues(config) {
-      const c = { ...defaultConfig, ...config };
-      return new Map([
-        ["player_name", c.player_name],
-        ["position", c.position],
-        ["bio", c.bio],
-        ["goals", c.goals],
-        ["assists", c.assists],
-        ["matches", c.matches]
-      ]);
-    }
-
-    window.elementSdk.init({ defaultConfig, onConfigChange, mapToCapabilities, mapToEditPanelValues });
+        fontEditable: { get: () => config.font_family || defaultConfig.font_family, set: (v) => { config.font_family = v; window.elementSdk.setConfig({ font_family: v }); } },
+        fontSizeable: { get: () => config.font_size || defaultConfig.font_size, set: (v) => { config.font_size = v; window.elementSdk.setConfig({ font_size: v }); } }
+      }),
+      mapToEditPanelValues: (config) => new Map([
+        ['hero_title', config.hero_title || defaultConfig.hero_title],
+        ['hero_subtitle', config.hero_subtitle || defaultConfig.hero_subtitle],
+        ['about_text', config.about_text || defaultConfig.about_text]
+      ])
+    });
   </script>
- <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a0857f710d0240a9',t:'MTc4MDg5NjU1NQ=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a095610fc8608408',t:'MTc4MTA2MzA4Mw=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
+  
